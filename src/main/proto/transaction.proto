@@ -1,11 +1,11 @@
 syntax = "proto3";
 
 option java_multiple_files = true;
-option java_package = "endpoint";
+option java_package = "com.mybank.endpoint";
 option java_outer_classname = "TransactiondProto";
 option objc_class_prefix = "HLW";
 
-package endpoint;
+package com.mybank.endpoint;
 
 service Account {
   rpc SendDebit (DebitRequest) returns (DebitReply) {}

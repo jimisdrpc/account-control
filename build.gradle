@@ -7,7 +7,7 @@ plugins {
 }
 
 version "0.2"
-group "helloworld"
+group "account-control"
 
 repositories {
     mavenLocal()
@@ -34,6 +34,9 @@ dependencies {
     implementation("io.micronaut.grpc:micronaut-grpc-client-runtime:$micronautGrpcVersion")
     implementation("io.grpc:grpc-kotlin-stub:${grpcKotlinVersion}")
 
+    //Kafka
+    implementation("io.micronaut.kafka:micronaut-kafka")
+
     runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
 
@@ -50,7 +53,7 @@ dependencies {
 
 test.classpath += configurations.developmentOnly
 
-mainClassName = "helloworld.Application"
+mainClassName = "account-control.Application"
 
 test {
     useJUnitPlatform()
