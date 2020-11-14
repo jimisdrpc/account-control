@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.mybank.endpoint";
+option java_outer_classname = "TransactionsProto";
+option objc_class_prefix = "HLW";
+
+package com.mybank.endpoint;
+
+import "google/protobuf/wrappers.proto";
+
+service TransactionsService {
+  rpc PostTransactions(TransactionsRequest) returns (TransactionsReply);
+}
+
+message TransactionsRequest {
+  string transactionDesc = 1;
+  repeated Transaction transactions = 2;
+}
+message Transaction {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+}
+
+message TransactionsReply {
+  string message = 1;
+}
