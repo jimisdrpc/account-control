@@ -1,5 +1,8 @@
 package com.mybank.producer
 
+
+import com.mybank.dto.Transaction
+import com.mybank.dto.Transactions
 import io.micronaut.configuration.kafka.annotation.KafkaClient
 import io.micronaut.configuration.kafka.annotation.KafkaKey
 import io.micronaut.configuration.kafka.annotation.Topic
@@ -7,12 +10,16 @@ import io.micronaut.configuration.kafka.annotation.Topic
 @KafkaClient
 public interface DebitProducer {
     @Topic("debit")
-    fun sendGreetMessage(@KafkaKey day: String?, message: String?) {
+    fun sendRequestMessage(@KafkaKey key: String?, message: String?) {
     }
 
     @Topic("debit")
-    fun sendGreetMessage( message: String?) {
+    fun sendRequestMessage( transaction: Transaction) {
     }
 
-    fun sendGreetMessage(@Topic topic: String?, @KafkaKey day: String?, message: String?) {}
+    @Topic("debit")
+    fun sendRequestMessage( transactions: Transactions) {
+    }
+
+    fun sendRequestMessage(@Topic topic: String?, @KafkaKey day: String?, message: String?) {}
 }

@@ -1,0 +1,1 @@
+*** Micronaut + GRPC + Proto + Kafka producer
