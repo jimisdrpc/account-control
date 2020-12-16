@@ -3,7 +3,12 @@ micronaut:
         name: account-control
 grpc:
     server:
-        port: 8081
+        port: 8082
+kafka:
+    producers:
+        debit-client:
+            value:
+                serializer: io.confluent.kafka.serializers.protobuf.KafkaProtobufSerializer
 
 # Uncomment to enable service discovery with Consul
 #consul:

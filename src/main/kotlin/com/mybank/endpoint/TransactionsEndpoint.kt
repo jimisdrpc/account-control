@@ -1,7 +1,10 @@
 package com.mybank.endpoint
 
-import com.mybank.dto.Transactions
+import com.mybank.endpoint.TransactionsProto
 import com.mybank.dto.Transaction
+import com.mybank.dto.Transactions
+
+
 import com.mybank.service.TransactionService
 import javax.inject.Singleton
 

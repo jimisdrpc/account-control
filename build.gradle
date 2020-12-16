@@ -12,6 +12,7 @@ group "account-control"
 repositories {
     mavenLocal()
     jcenter()
+    //maven { url "https://packages.confluent.io/maven/" }
 }
 
 configurations {
@@ -36,6 +37,17 @@ dependencies {
 
     //Kafka
     implementation("io.micronaut.kafka:micronaut-kafka")
+
+    //vertx
+    implementation("io.micronaut.sql:micronaut-vertx-mysql-client")
+    //implementation("io.micronaut.configuration:micronaut-vertx-mysql-client")
+    compile 'io.vertx:vertx-lang-kotlin:3.9.4'
+
+    //mongodb
+    implementation("org.mongodb:mongodb-driver-reactivestreams:4.1.1")
+
+    //kafka-protobuf-serializer
+    //implementation("io.confluent:kafka-protobuf-serializer:6.0.0")
 
     runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin:2.9.8")
